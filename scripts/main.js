@@ -25,9 +25,9 @@ function setDetailsFromThumb(thumbnail) {
     setDetails(imageFromThum(thumbnail), titleFromThub(thumbnail));
 }
 
-function addThumbClickHadler(thumbnail) {
+function addThumbClickHandler(thumbnail) {
     'use strict';
-    thumbnail.addEventListner('click', function(event) {
+    thumbnail.addEventListener('click', function(event) {
         event.preventDefault();
         setDetailsFromThumb(thumbnail);
     });
@@ -39,3 +39,11 @@ function getThumbnailsArray() {
     var thumbnailArray = [].slice.call(thumbnails);
     return thumbnailArray;
 }
+
+function initializeEvents() {
+  debugger;
+    'use strict';
+    var thumbnails = getThumbnailsArray();
+    thumbnails.forEach(addThumbClickHandler);
+}
+initializeEvents();
